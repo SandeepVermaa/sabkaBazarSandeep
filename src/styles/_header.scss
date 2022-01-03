@@ -1,0 +1,120 @@
+.header-container {
+  box-shadow: 0 8px 6px -7px $light-gray-shadow;
+  width: 100%;
+  z-index: 10;
+  background-color: $std-white;
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  @media (max-width: 768px) {
+    box-shadow: 0 -12px 9px 11px #c4c4c4;
+  }
+
+  .container {
+    @media (max-width: 768px) {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    @media (max-width: 767.98px) {
+      height: 55px;
+    }
+  }
+
+  .app-logo {
+    align-self: center;
+
+    & img {
+      max-height: 70px;
+      pointer-events: none;
+      padding: 0 1rem;
+
+      @media (max-width: 767.98px) {
+        max-height: 45px;
+      }
+    }
+  }
+
+  .main-menu {
+    @media (max-width: 767.98px) {
+      display: none !important;
+    }
+
+    .nav-link {
+      padding: 0.5rem 1rem;
+      font-size: 16px;
+    }
+  }
+
+  .auth-menu {
+    margin-bottom: 0.6rem;
+    margin-top: 0.3rem;
+
+    @media (max-width: 767.98px) {
+      display: none !important;
+    }
+
+    .nav-link {
+      padding: 0 0.3rem 0 0.7rem;
+      font-size: 14px;
+    }
+  }
+
+  .start-rt {
+    display: flex;
+    justify-content: end;
+  }
+
+  .cart-btn {
+    @media (max-width: 767.98px) {
+      width: 100%;
+    }
+    .btn {
+      background-color: $light-gray;
+      display: flex;
+      width: 130px;
+      height: 65px;
+      align-items: center;
+
+      @media (max-width: 767.98px) {
+        width: 140px;
+        height: 55px;
+      }
+
+      &:hover {
+        background-color: $light-gray-bg-hover;
+      }
+
+      img {
+        max-height: 35px;
+        margin-right: 10px;
+      }
+
+      div {
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.nav-bar {
+  align-self: center;
+
+  .nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link {
+    font-weight: 600;
+    color: $font-medium-gray;
+    text-decoration: none;
+
+    &:hover {
+      @extend .link-focus;
+    }
+  }
+}

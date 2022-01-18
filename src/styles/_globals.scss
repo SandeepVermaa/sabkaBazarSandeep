@@ -11,6 +11,10 @@ body {
   padding: 0;
 }
 
+h1{
+  font-size: 24px;
+}
+
 .container {
   width: 100%;
   margin-right: auto;
@@ -50,8 +54,24 @@ body {
   width: 25%;
 }
 
+.col-30 {
+  width: 30%;
+}
+
+.col-40 {
+  width: 40%;
+}
+
 .col-50 {
   width: 50%;
+}
+
+.col-60 {
+  width: 60%;
+}
+
+.col-70 {
+  width: 70%;
 }
 
 .col-75 {
@@ -104,4 +124,86 @@ body {
   font-size: 1rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  border: 0;
+  border-bottom: 2px solid #e2e2e2;
+  border-radius: 0;
+  appearance: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #50dae2;
+    outline: 0;
+  }
+}
+
+.form-floating {
+  position: relative;
+
+  > .form-control,
+  > .form-select {
+    height: calc(3.5rem + 2px);
+    line-height: 1.25;
+  }
+
+  > label {
+    position: absolute;
+    color: #aeaeae;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1rem 0;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+  }
+
+  > .form-control {
+    padding: 1rem 0;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      padding-top: 1.625rem;
+      padding-bottom: 0.625rem;
+    }
+  }
+
+  > .form-select {
+    padding-top: 1.625rem;
+    padding-bottom: 0.625rem;
+  }
+
+  > .form-control:focus,
+  > .form-control:not(:placeholder-shown),
+  > .form-select {
+    ~ label {
+      transform: scale(0.85) translateY(-0.8rem);
+    }
+  }
+
+  > .form-control:focus ~ label {
+    color: #50dae2;
+  }
 }

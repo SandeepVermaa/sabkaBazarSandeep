@@ -4,7 +4,7 @@
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
   "scripts": {
-    "fake-server": "canned -p 3000 ./server",
+    "canned-server": "canned -p 3000 ./server",
     "start": "webpack serve --open",
     "build:Dev": "webpack --mode development",
     "build:Prod": "webpack --mode production",

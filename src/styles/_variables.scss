@@ -1,32 +1,31 @@
 /*Section colors*/
-$footer-gray: #eaeaea;
-
 /*Shadow colors*/
-$light-gray-shadow: #c4c4c4;
+$c-shadow: #c4c4c4;
 
 /*Standard colors*/
-$std-white: white;
-$std-black: black;
+$c-white: white;
+$c-black: black;
+$c-gray: #686868;
+$c-dark-gray: #4c4e46;
+$c-medium-gray: #565656;
+$c-light-gray: #b8b6b7;
+// $c-cyan: #3e9298;
 
-/*Font Colors*/
-$font-dark-gray: #4c4e46;
-$font-medium-gray: #565656;
-$font-light-gray: #b8b6b7;
-$font-cyan: #3e9298;
-$font-gray: #686868;
+/*Theme colors*/
+$c-primary: #d00155;
+$c-primary-light: rgba(208, 1, 85, 0.7);
+$c-primary-2: #50dae2;
+$c-secondary: #eeeeee;
+$c-secondary-light: rgba(238, 238, 238, 0.5);
+$c-secondary-dark: #dddddd;
 
-/*Input field colors*/
-$text-field-border: #e2e2e2;
-$text-field-border-focus: #3e9298;
+
 
 /*Border colors*/
 $light-gray-border: #d8d8d8;
 
-/*Theme colors*/
-$crimson-pink: #d00155;
 $light-gray: #eeeeee;
 $light-gray-bg-hover: rgba(238, 238, 238, 0.5);
-$light-crimson-pink-hover: rgba(208, 1, 85, 0.7);
 $light-gray-2: #f0f0f0;
 $theme-black: #1d2124;
 $snackbar-bg: #333;

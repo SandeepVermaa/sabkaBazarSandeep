@@ -4,11 +4,12 @@
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
   "scripts": {
-    "fake-server": "canned -p 8000 ./server",
-    "start": "webpack-dev-server",
+    "fake-server": "canned -p 3000 ./server",
+    "start": "webpack serve --open",
     "build:Dev": "webpack --mode development",
     "build:Prod": "webpack --mode production",
-    "preview-server": "node ./dist/server.js"
+    "preview-server": "node ./dist/server.js",
+    "build-server": "npm run build:Prod && npm run preview-server"
   },
   "author": "Taha Moin",
   "license": "MIT",

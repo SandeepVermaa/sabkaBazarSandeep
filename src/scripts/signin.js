@@ -19,7 +19,6 @@ function onSubmitLogin(e) {
   for (var [key, value] of formData.entries()) {
     userData[key] = value;
   }
-  console.log('usser', userData)
   toastr.showToast('Sign Up Successfull');
 }
 

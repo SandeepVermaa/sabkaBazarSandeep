@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require("express");
 const compression = require("compression");
 const path = require("path");
 const cors = require("cors");
@@ -16,9 +16,9 @@ app.use(compression());
 app.use(express.static(path.join(__dirname, "/")));
 app.use(express.json());
 
-app.get('/', function (req, res) {
-  res.sendFile('index.html', {root: __dirname})
-})
+app.get("/", function (req, res) {
+  res.sendFile("index.html", { root: __dirname });
+});
 
 app.get("/banners", (req, res) => {
   res.json(bannersData);
@@ -33,7 +33,6 @@ app.get("/products", (req, res) => {
 });
 
 app.post("/addToCart", (req, res) => {
-  console.log("addToCart API request body: ", req.body);
   res.json(addToCartAPIResponseData);
 });
 
@@ -48,6 +47,11 @@ app.post("/register", (req, res) => {
     users = [...users, { ...req.body, id: new Date().getTime() }];
     res.json({ status: "success", message: "User registered successfully" });
   }
+});
+
+//The 404 Route (ALWAYS Keep this as the last route)
+app.get("*", (req, res) => {
+  res.sendFile("pageNotFound.html", { root: __dirname });
 });
 
 app.listen(port);

@@ -10,7 +10,7 @@ module.exports = {
     index: "./src/index.js",
     products: "./src/scripts/products.js",
     register: "./src/scripts/register.js",
-    signin: "./src/scripts/signin.js",
+    signin: "./src/scripts/signin.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -62,6 +62,11 @@ module.exports = {
       inject: true,
       chunks: ["signin"],
       filename: "signin.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/pageNotFound.html",
+      chunks: [],
+      filename: "pageNotFound.html",
     }),
     new CopyPlugin({
       patterns: [

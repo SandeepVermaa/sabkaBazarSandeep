@@ -1,4 +1,4 @@
-<header class="header-container">
+<section class="header-container">
   <div class="container">
     <div class="row">
       <div class="col-25 app-logo">
@@ -17,44 +17,32 @@
         <div class="row">
           <nav class="col-100 nav-bar auth-menu f-14 start-rt">
             <ul class="nav">
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/"
-                  aria-label="Click to SignIn"
-                  title="SignIn"
-                >SignIn</a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/"
-                  aria-label="Click to Register"
-                  title="Register"
-                >Register</a>
-              </li>
+              {{#each navAuth}}
+                <li class="nav-item">
+                  <a
+                    class="nav-link {{this.status}}"
+                    href="{{this.link}}"
+                    aria-label="Click to {{this.name}}"
+                    title="{{this.name}}"
+                  >{{this.name}}</a>
+                </li>
+              {{/each}}
             </ul>
           </nav>
         </div>
         <div class="row">
           <nav class="col-75 nav-bar main-menu f-16">
             <ul class="nav">
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/"
-                  aria-label="Navigate to Home screen"
-                  title="Home"
-                >Home</a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="/"
-                  aria-label="Navigate to Products screen"
-                  title="Products"
-                >Products</a>
-              </li>
+              {{#each navList}}
+                <li class="nav-item">
+                  <a
+                    class="nav-link {{this.status}}"
+                    href="{{this.link}}"
+                    aria-label="Navigate to {{this.name}} screen"
+                    title="{{this.name}}"
+                  >{{this.name}}</a>
+                </li>
+              {{/each}}
             </ul>
           </nav>
           <div class="col-25 cart-btn start-rt">
@@ -72,4 +60,8 @@
       </div>
     </div>
   </div>
-</header>
+</section>
+
+<section class="cart-overlay">
+ {{> cart}}
+</section>

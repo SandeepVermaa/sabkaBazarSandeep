@@ -1,13 +1,18 @@
-.header-container {
-  box-shadow: 0 8px 6px -7px $light-gray-shadow;
-  width: 100%;
-  z-index: 10;
-  background-color: $std-white;
+header {
+  z-index: 99;
   position: sticky;
   top: 0;
   left: 0;
+}
+
+.header-container {
+  box-shadow: 0 8px 6px -7px $light-gray-shadow;
+  width: 100%;
+  background-color: $std-white;
+  height: 95px;
 
   @media (max-width: 767.98px) {
+    height: 55px;
     box-shadow: 0 -12px 9px 11px #c4c4c4;
   }
 
@@ -75,7 +80,7 @@
       background-color: $light-gray;
       display: flex;
       width: 130px;
-      height: 65px;
+      height: 63px;
       align-items: center;
 
       @media (max-width: 767.98px) {
@@ -117,5 +122,9 @@
     &:hover {
       @extend .link-focus;
     }
+  }
+
+  .active {
+    @extend .link-active;
   }
 }

@@ -78,6 +78,10 @@ module.exports = {
           from: path.resolve(__dirname, "server.js"),
           to: path.resolve(__dirname, "dist"),
         },
+        {
+          from: path.resolve(__dirname, "users"),
+          to: path.resolve(__dirname, "dist", "users"),
+        },
       ],
     }),
     // new CleanWebpackPlugin(),

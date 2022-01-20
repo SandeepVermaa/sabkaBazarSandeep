@@ -4,6 +4,8 @@ import productListTemplate from "./../templates/productList.hbs";
 import * as footer from "./footer.js";
 import * as header from "./header.js";
 import * as helper from "../helper/general.helper.js";
+import * as toastr from "../helper/toastr";
+
 
 let allProducts = [];
 const templateData = {
@@ -123,6 +125,7 @@ function addToCart(e) {
     localStorage.setItem("cartItems", JSON.stringify(newCart));
   }
   header.setCartItemsLength();
+  toastr.showToast('Item added to cart');
 }
 
 async function init() {

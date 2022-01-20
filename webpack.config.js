@@ -1,13 +1,16 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: {
-    index: path.resolve(__dirname, "src", "index.js"),
-    products: './src/scripts/products.js',
-    register: './src/scripts/register.js',
-    signin: './src/scripts/signin.js',
+    index: "./src/index.js",
+    products: "./src/scripts/products.js",
+    register: "./src/scripts/register.js",
+    signin: "./src/scripts/signin.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -18,7 +21,7 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         exclude: /node_modules/,
-        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -37,7 +40,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src", "index.html"),
+      template: "./src/index.html",
       inject: true,
       chunks: ["index"],
       filename: "index.html",
@@ -77,5 +80,16 @@ module.exports = {
         },
       ],
     }),
+    // new CleanWebpackPlugin(),
   ],
+  optimization: {
+    splitChunks: { chunks: "all" },
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+      }),
+      new CssMinimizerPlugin(),
+    ],
+  },
 };

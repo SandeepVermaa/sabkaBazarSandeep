@@ -1,8 +1,8 @@
 import "./styles/styles.scss";
 import template from "./templates/home.hbs";
-import * as footer from "./templates/footer/footer.js";
-import * as header from "./templates/header/header.js";
-import * as fetchAdapter from "./adpaters/fetch.adapter";
+import * as footer from "./scripts/footer.js";
+import * as header from "./scripts/header.js";
+import * as helper from "./helper/general.helper";
 
 let slideIndex = 1;
 const templateData = {
@@ -49,7 +49,7 @@ function navigateToProducts(e) {
 
 async function getBanners() {
   try {
-    let response = await fetchAdapter.request("banners", "GET");
+    let response = await helper.request("banners", "GET");
     let banners = await response.json();
     if (banners && banners.length) {
       banners = banners
@@ -64,7 +64,7 @@ async function getBanners() {
 
 async function getCategory() {
   try {
-    let response = await fetchAdapter.request("categories", "GET");
+    let response = await helper.request("categories", "GET");
     let categories = await response.json();
     if (categories && categories.length) {
       categories = categories

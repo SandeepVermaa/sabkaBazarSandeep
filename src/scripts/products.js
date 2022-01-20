@@ -1,9 +1,9 @@
-import "./../../styles/styles.scss";
-import template from "./../../templates/products.hbs";
-import productListTemplate from "./../../templates/productList.hbs";
-import * as footer from "./../../templates/footer/footer.js";
-import * as header from "./../../templates/header/header.js";
-import * as fetchAdapter from "./../../adpaters/fetch.adapter.js";
+import "./../styles/styles.scss"
+import template from "./../templates/products.hbs";
+import productListTemplate from "./../templates/productList.hbs";
+import * as footer from "./footer.js";
+import * as header from "./header.js";
+import * as helper from "../helper/general.helper.js";
 
 let allProducts = [];
 const templateData = {
@@ -15,9 +15,8 @@ let selectedCategory;
 
 async function getProducts() {
   try {
-    let response = await fetchAdapter.request("products", "GET");
+    let response = await helper.request("products", "GET");
     let products = await response.json();
-    console.log("products", products);
     return products;
   } catch (err) {
     console.log("Error: ", err);
@@ -26,7 +25,7 @@ async function getProducts() {
 
 async function getCategory() {
   try {
-    let response = await fetchAdapter.request("categories", "GET");
+    let response = await helper.request("categories", "GET");
     let categories = await response.json();
     if (categories && categories.length) {
       categories = categories
@@ -47,7 +46,6 @@ function toggleCategoryDropdown() {
 }
 
 function categorizedProducts(e) {
-  //   console.log("evet", e);
   if (e && e.target && e.target.dataset && e.target.dataset.id) {
     const id = e.target.dataset.id;
     if (templateData.products) {
@@ -56,7 +54,6 @@ function categorizedProducts(e) {
       );
     }
     highlightSelectedCategory(e);
-    // console.log("categorizedProducts", id, templateData.products);
     updateProductDOM();
 
     document.querySelector(".category-dropdown-btn").innerHTML =
@@ -101,12 +98,10 @@ function registerBuyEvent() {
 }
 
 function addToCart(e) {
-  // console.log("add to cart", e.target.dataset.id);
   const newItemID = e.target.dataset.id;
   const newItemDetails = allProducts.find(
     (product) => product.id === newItemID
   );
-  // console.log("items", newItemDetails);
   const cartItems = JSON.parse(localStorage.getItem("cartItems"));
   if (cartItems && cartItems.length) {
     const existingItem = cartItems.find((item) => item.id === newItemID);

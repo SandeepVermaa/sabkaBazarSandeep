@@ -1,7 +1,7 @@
-import "./../../styles/styles.scss";
-import * as template from "./../../templates/register.hbs";
-import * as footer from "./../../templates/footer/footer.js";
-import * as header from "./../../templates/header/header.js";
+import "./../styles/styles.scss";
+import * as template from "./../templates/register.hbs";
+import * as footer from "./footer.js";
+import * as header from "./header.js";
 
 function init() {
   let container = document.getElementById("register");

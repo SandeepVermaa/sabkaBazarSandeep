@@ -1,5 +1,5 @@
-import * as template from "./header.hbs";
-import cartTemplate from "./cart.hbs";
+import * as template from "./../templates/header.hbs";
+import cartTemplate from "./../templates/cart.hbs";
 
 const navList = [
   {
@@ -51,7 +51,7 @@ function changeQuantity(e) {
     item.quantity += 1;
     item.totalPrice = item.quantity * item.price
   } else {
-    item.quantity -= 1;
+    item.quantity -+ 1;
     item.totalPrice = item.quantity * item.price
     if(item.quantity <= 0){
       cartItems = cartItems.filter(item => item.quantity > 0);

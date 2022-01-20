@@ -1,4 +1,4 @@
-import * as template from './footer.hbs';
+import * as template from './../templates/footer.hbs';
 
 export function init() {
   let container = document.getElementById("footer");

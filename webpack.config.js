@@ -5,9 +5,9 @@ const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
   entry: {
     index: path.resolve(__dirname, "src", "index.js"),
-    products: './src/pages/products/products.js',
-    register: './src/pages/register/register.js',
-    signin: './src/pages/signin/signin.js',
+    products: './src/scripts/products.js',
+    register: './src/scripts/register.js',
+    signin: './src/scripts/signin.js',
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -43,19 +43,19 @@ module.exports = {
       filename: "index.html",
     }),
     new HtmlWebpackPlugin({
-      template: "./src/pages/products/products.html",
+      template: "./src/pages/products.html",
       inject: true,
       chunks: ["products"],
       filename: "products.html",
     }),
     new HtmlWebpackPlugin({
-      template: "./src/pages/register/register.html",
+      template: "./src/pages/register.html",
       inject: true,
       chunks: ["register"],
       filename: "register.html",
     }),
     new HtmlWebpackPlugin({
-      template: "./src/pages/signin/signin.html",
+      template: "./src/pages/signin.html",
       inject: true,
       chunks: ["signin"],
       filename: "signin.html",

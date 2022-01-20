@@ -198,8 +198,15 @@
   }
 }
 
+@media (max-width: 800px) {
+  .products-container {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 767px) {
   .products-container {
+    max-width: 540px;
     .row {
       flex-direction: column;
     }

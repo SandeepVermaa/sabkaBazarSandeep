@@ -70,7 +70,6 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        // Copy static assets, images etc
         {
           from: path.resolve(__dirname, "static"),
           to: path.resolve(__dirname, "dist", "static"),
@@ -89,7 +88,7 @@ module.exports = {
         },
       ],
     }),
-    // new CleanWebpackPlugin(),
+    new CleanWebpackPlugin()
   ],
   optimization: {
     splitChunks: { chunks: "all" },

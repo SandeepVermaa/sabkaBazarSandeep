@@ -49,7 +49,6 @@ app.post("/register", (req, res) => {
   }
 });
 
-//The 404 Route (ALWAYS Keep this as the last route)
 app.get("*", (req, res) => {
   res.sendFile("pageNotFound.html", { root: __dirname });
 });

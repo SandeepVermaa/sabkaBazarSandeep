@@ -42,7 +42,7 @@ function navigateToProducts(e) {
   if (e && e.target && e.target.dataset && e.target.dataset.id) {
     const id = e.target.dataset.id;
     location.assign(
-      `${location.href}products.html?productID=${e.target.dataset.id}`
+      `${location.href}products.html?productID=${id}`
     );
   }
 }

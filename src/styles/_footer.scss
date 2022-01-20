@@ -3,7 +3,10 @@
   height: 50px;
   display: flex;
   align-items: center;
-  font-size: 14px;
+  
+  .footer-info{
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 768px) {

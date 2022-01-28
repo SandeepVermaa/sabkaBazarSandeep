@@ -96,6 +96,9 @@
     flex-wrap: wrap;
     padding: 1rem 0.75rem 2rem;
 
+    .product-link{
+      display: block;
+    }
     .product {
       width: 25%;
       padding: 0.75rem;
@@ -113,6 +116,7 @@
       .product-image {
         margin-bottom: 0.75rem;
       }
+
 
       .product-description {
         background-color: $c-secondary;

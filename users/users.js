@@ -1,9 +1,9 @@
 const users = [
     {
       id: 1,
-      firstName: "Taha",
-      lastName: "Moin",
-      email: "mohammedtaha.moin@publicissapient.com",
+      firstName: "Sandeep",
+      lastName: "Verma",
+      email: "sandeepverma@publicissapient.com",
       password: "password",
     }
   ];
